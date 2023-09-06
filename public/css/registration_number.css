@@ -15,7 +15,7 @@
 
 body {
  /* background-image filter: brightness(40%); */
-  background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url(../css/bgCar.jpg);
+  /* background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url(../css/bgCar.jpg); */
   /* background-size: cover; */
   position: relative;
   background-repeat: no-repeat;
@@ -188,7 +188,7 @@ select:focus {
 
 /* Common styles for larger screens */
 body {
-  background-image: url(../css/bgCar.jpg);
+  background-image: url(../css/bgCar.jpg); 
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,6 +208,7 @@ body {
   margin-right: auto;
   max-width: 900px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.5em;
 }
 
 /* Styles for smaller screens (e.g., mobile devices) */

@@ -7,7 +7,7 @@ export default function AddRegNums(dbLogic, frontEndLogic) {
         let valid = frontEndLogic.checkRegNum(registration);
       
         if (valid) {
-          await dbLogic.insertRegNum(registration, valid);
+          await dbLogic.insertRegNum(registration.toUpperCase(), valid);
           console.log('Registration number added successfully');
         } else {
           console.log('Invalid registration number');

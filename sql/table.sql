@@ -1,6 +1,7 @@
 -- Create the towns table
 CREATE TABLE towns (
   id SERIAL PRIMARY KEY,
+  town_name TEXT NOT NULL,
   name TEXT NOT NULL
 );
 

@@ -1,35 +1,44 @@
+<h1>Registration Numbers from Western Cape</h1>
+{{!-- this is going to be an info box --}}
+{{!-- <p>only ck, cl, cj , ca</p> --}}
+<div class="emptyInput"></div>
 
-    <h1>Registration Numbers from Western Cape</h1>
-    {{!-- this is going to be an info box --}}
-    <p>only ck, cl, cj , ca</p>
+<div class="container">
+    <form action="/registrations" method="POST">
 
-    <div class="emptyInput"></div>
-
-    <div class="section">
-
-        <p>Registration Number : <input type="text" class="textArea" id="key" placeholder="Enter registration number">
+        <p>Registration Number : <input type="text" class="textArea" id='reg_id' name="car_registration"
+                placeholder="Enter registration number">
         </p>
         <p class="invalidMsg"></p>
 
-        <button class="addRegNoBtn">ADD</button>
+        <button class="addRegNoBtn" type="submit">ADD</button>
+    </form>
+    <form action="/clear" method="post">
+        <button type="submit">CLEAR</button>
+    </form>
+</div>
 
-    </div>
-    <br>
 
+<br>
+<form action="" method="POST">
     <div class="boxRegNo">
         <div>
             <label for="regNums">Select a town:</label>
             <select name="town" class="town">
-                <option value="" disabled selected>Select your option</option>
+                <option value="" disabled selected>Select your option </option>
                 <option value="allTowns">All towns</option>
                 <option value="capetown">Cape Town</option>
                 <option value="paarl">Paarl</option>
                 <option value="malmesbury">Malmesbury</option>
                 <option value="stellenbosch">Stellenbosch</option>
+                <option value="vredenburg">Vredenburg</option>
+
             </select>
         </div>
-
-
     </div>
-
-
+</form>
+<div class="font">
+    {{#each regNum}}
+    <p>{{this.number}}</p>
+    {{/each}}
+</div>

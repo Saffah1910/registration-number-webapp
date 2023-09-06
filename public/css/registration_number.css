@@ -14,8 +14,9 @@
 }
 
 body {
-  /* background-image: url(../css/bgCar.jpg); */
-  background-size: cover;
+ /* background-image filter: brightness(40%); */
+  background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url(../css/bgCar.jpg);
+  /* background-size: cover; */
   position: relative;
   background-repeat: no-repeat;
 
@@ -29,14 +30,28 @@ body h1 {
   text-align: center;
 }
 
-.section {
-  /* 
-    border-style: solid;
-    border-color: #8f250c;
-    border-radius: 5%;
-  border-width: 5px; */
+.container {
+
+
+  border: 5px solid #8f250c;
   text-align: center;
-  font-size: 2em;
+  font-size: 25px;
+  height: 150px;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+input {
+  height: 20px;
 }
 
 
@@ -95,12 +110,124 @@ button:active {
 }
 
 .numberPlate {
-  font-size:2em;
+  font-size: 2em;
 }
 
 .font {
   font-family: carPlate;
+  text-align: center;
+  font-size: 2em;
 }
-.text-align{
+
+.text-align {
   text-align: center;
 }
+.boxRegNo{
+  text-align: center;
+}
+
+/* Style for the select element */
+select {
+  appearance: none;
+  outline: none;
+  background: rgba(128, 15, 0, 0.61);
+  text-align: center;
+  color: black;
+  /* cursor: pointer; */
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 16px;
+  /* Increase font size for better readability */
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  /* Change to inline-block to fit content */
+  width: 15em;
+  height: 2em;
+  line-height: 2;
+  /* Adjust line-height for better alignment */
+  /* overflow: hidden; */
+  border-radius: 3px;
+  background-color: white;
+  /* Set a background color for the container */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  /* Add a subtle shadow */
+}
+
+/* Style for the select arrow (dropdown arrow) */
+.select::after {
+  content: '\25BC';
+  /* Unicode character for a down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  /* Adjust the arrow size */
+  /* pointer-events: none; */
+  /* Allow clicks to pass through to the select element */
+}
+
+/* Hover and focus styles for better user feedback */
+select:hover,
+select:focus {
+  border-color: #007bff;
+  /* Change border color on hover/focus */
+  background-color: rgba(128, 15, 0, 0.8);
+  /* Darker background on hover/focus */
+  color: white;
+  /* Change text color on hover/focus */
+}
+/* Define the base font size */
+:root {
+  font-size: 20px;
+}
+
+/* Common styles for larger screens */
+body {
+  background-image: url(../css/bgCar.jpg);
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  border: 5px solid #8f250c;
+  text-align: center;
+  font-size: 25px;
+  height: 150px;
+  text-align: center;
+  margin-top: 100px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  :root {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+
+  body {
+    background-size: auto; /* Remove background-size for smaller screens */
+  }
+
+  body h1 {
+    font-size: 24px; /* Increase font size for smaller screens */
+  }
+
+  .container {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    margin-top: 50px; /* Decrease margin-top for smaller screens */
+  }
+}
+
+/* Add more media queries and adjust styles as needed for other screen sizes */

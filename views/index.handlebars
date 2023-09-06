@@ -1,6 +1,6 @@
 <h1>Registration Numbers from Western Cape</h1>
 {{!-- this is going to be an info box --}}
-{{!-- <p>only ck, cl, cj , ca</p> --}}
+<p class="info">Enter a registration from Cape Town(CA), Paarl(CJ), Stellenbosch(CL), Malmesbury(CK)</p>
 <div class="emptyInput"></div>
 
 <div class="container">
@@ -39,6 +39,6 @@
 </form>
 <div class="font">
     {{#each regNum}}
-    <p>{{this.number}}</p>
+    <p class="regNum">{{this.number}}</p>
     {{/each}}
 </div>

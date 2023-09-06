@@ -29,6 +29,10 @@ body h1 {
   text-shadow: 3px 3px 3px grey;
   text-align: center;
 }
+.info{
+  text-align: center;
+  /* color: rgb(98, 97, 97); */
+}
 
 .container {
 
@@ -49,6 +53,7 @@ body h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
+
 
 input {
   height: 20px;
@@ -117,6 +122,19 @@ button:active {
   font-family: carPlate;
   text-align: center;
   font-size: 2em;
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  gap: 10px;
+
+}
+.regNum{
+  border: black;
+background-color: #f2f2f2;
+/* width: 200px; */
+
 }
 
 .text-align {
@@ -189,6 +207,8 @@ select:focus {
 /* Common styles for larger screens */
 body {
   background-image: url(../css/bgCar.jpg); 
+  /* background-image: linear-gradient(to right, rgba(4, 175, 243, 0), rgb(178, 87, 69)); */
+
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -218,8 +238,8 @@ body {
   }
 
   body {
-    background-size: auto; /* Remove background-size for smaller screens */
-  }
+    background-size: auto;
+  } 
 
   body h1 {
     font-size: 24px; /* Increase font size for smaller screens */

@@ -31,7 +31,7 @@ body h1 {
 }
 .info{
   text-align: center;
-  /* color: rgb(98, 97, 97); */
+  color: rgb(98, 97, 97);
 }
 
 .container {
@@ -42,11 +42,11 @@ body h1 {
   font-size: 25px;
   height: 150px;
   font-size: 30px;
-  text-align: center;
-  margin-top: 100px;
+  /* text-align: center; */
+  /* margin-top: 80px; */
   background-color: #f2f2f2;
   border-radius: 10px;
-  padding: 10px;
+  /* padding: 10px; */
   margin-left: auto;
   margin-right: auto;
   max-width: 900px;
@@ -64,6 +64,7 @@ body h1 {
 
 input {
   height: 20px;
+
 }
 
 
@@ -130,16 +131,14 @@ button:active {
   text-align: center;
   font-size: 2em;
   display: grid;
-  grid-template-columns: repeat(
-    5,
-    1fr
-  ); /* Adjust the number of columns as needed */
-  gap: 10px;
+  grid-template-columns: 1fr 2fr 1fr 3fr; /* Define 4 columns with different sizes */
+  gap: 10px; /* Set a larger gap of 10 pixels */
+  
 
 }
 .regNum{
   border: black;
-background-color: #f2f2f2;
+/* background-color: #f2f2f2; */
 /* width: 200px; */
 
 }
@@ -236,6 +235,23 @@ body {
   max-width: 900px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding-bottom: 0.5em;
+}
+
+.green {
+  border: 1px solid;
+  margin: 0 auto;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  background-image: url('../css/resetGreen.png');
+  width: fit-content;
+  border: 2px solid #124105c2;
+  border-radius: 10px;
+  font-size: 20px;
+
+
 }
 
 /* Styles for smaller screens (e.g., mobile devices) */

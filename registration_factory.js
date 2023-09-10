@@ -1,59 +1,45 @@
-export default function RegistrationNumbers(db) {
-    let townId;
+export default function RegistrationNumbers(dbLogic) {
 
-    function checkRegNum(regNum) {
-        let regEx = /^(CA|CL|CK|CJ|CFG)\s?\d{1,3}\s?\d{1,3}$/i
+    let errorMessage = "";
 
+
+   async function checkRegNum(regNum) {
+        let regEx = /^(CA|CL|CK|CJ|CF)\s?\d{1,3}\s?\d{1,3}$/i
         var valid = regEx.test(regNum);
-        // console.log(valid);
         return valid;
     }
 
-    function addRed() {
-        return "red"
 
-    };
-    function addNumberPlate() {
-        return "numberPlate"
-    }
-    function addFont() {
-        return "font"
-    }
-    function addCenter() {
-        return "text-align"
-    }
-    function filterTown(town) {
-        if (town === "capetown") {
-            allTheRegNums;
-        }
-        if (town === "paarl") {
-            allTheRegNums
-        }
-        if (town === "malmesbury") {
-            allTheRegNums
-        }
-        if (town === "stellenbosch") {
-            allTheRegNums
-        }
-        if (town === "allTowns") {
-            allTheRegNums
-        }
-    }
-    function setErrors() {
+    async function setErrors(regNum) {
+        const currentRegNum = await dbLogic.insertRegNum(regNum)
         if (regNum = "") {
-            return "No registration number entered"
+            errorMessage = "Please enter registartion number";
         }
+        else if(!checkRegNum(regNum)) {
+            errorMessage = "Please enter valid registration number";
+        }
+        else if(!currentRegNum){
+            errorMessage =  "Registration number already exists"
+        }
+        console.log(errorMessage);
+        return errorMessage
 
+    }
+   async function filterError(){
+    let message = "";
+   let filterQuery = await dbLogic.filter();
+        
+        if (filterQuery.registrationNumbers.length === 0) {
+            message = "No registration numbers found for this town.";
+         }
+         return message
     }
 
     return {
         checkRegNum,
-        addRed,
-        addNumberPlate,
-        addFont,
-        addCenter,
-        filterTown,
-        setErrors
+        setErrors,
+        filterError
+        
     }
 
 

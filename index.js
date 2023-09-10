@@ -22,7 +22,7 @@ const db = pgp(connectionString);
 const app = express();
 //need nstance of factory function and query file
 const dbLogic = regNumQuery(db);
-const frontEndLogic = RegistrationNumbers();
+const frontEndLogic = RegistrationNumbers(dbLogic);
 //create instance for routes
 const indexRoute = showHome(dbLogic);
 const regNumRoute = AddRegNums(dbLogic,frontEndLogic)
@@ -42,9 +42,8 @@ app.use(flash());
 
 app.get('/', indexRoute.home);
 app.post('/registrations',regNumRoute.add);
-
 app.post('/clear',regNumRoute.clearAll);
-
+app.post('/filter',regNumRoute.filterTowns)
 
 
 

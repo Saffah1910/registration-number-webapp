@@ -1,10 +1,14 @@
 <h1>Registration Numbers from Western Cape</h1>
 {{!-- this is going to be an info box --}}
-<p class="info">Enter a registration from Cape Town(CA), Paarl(CJ), Stellenbosch(CL), Malmesbury(CK)</p>
-<div class="emptyInput"></div>
+<p class="info">Enter a registration from Cape Town(CA), Paarl(CJ), Stellenbosch(CL), Malmesbury(CK), Kraaifontein(CF)
+</p>
 
 <div class="container">
     <form action="/registrations" method="POST">
+
+        <p>{{errorMessage}}</p>
+
+
 
         <p>Registration Number : <input type="text" class="textArea" id='reg_id' name="car_registration"
                 placeholder="Enter registration number">
@@ -12,37 +16,49 @@
         <p class="invalidMsg"></p>
         <div class="buttons">
             <button class="addRegNoBtn" type="submit">ADD</button>
+            {{!--
+            <script>
+                setTimeout(function () {
+                    document.querySelector(".green").style.display = "none";
+                }, 3000)
+            </script> --}}
+            {{#if reset}}<p class="green">{{reset}}</p>{{/if}}
 
-            <button type="submit" formaction="/clear" onclick="return confirm('Are you sure you want to reset your data?')">CLEAR</button>
+            <button type="submit" formaction="/clear"
+                onclick="return confirm('Are you sure you want to reset your data?')">CLEAR</button>
         </div>
 
 
     </form>
-    {{!-- <form action="/clear" method="post"> --}}
-    {{!-- </form> --}}
+
 </div>
 
 
 <br>
-<form action="" method="POST">
+<form action="/filter" method="POST">
     <div class="boxRegNo">
+
         <div>
-            <label for="regNums">Select a town:</label>
+            <label for="regNums"></label>
+            {{!-- <p>{{}}</p> --}}
             <select name="town" class="town">
                 <option value="" disabled selected>Select your option </option>
-                <option value="allTowns">All towns</option>
-                <option value="capetown">Cape Town</option>
-                <option value="paarl">Paarl</option>
-                <option value="malmesbury">Malmesbury</option>
-                <option value="stellenbosch">Stellenbosch</option>
-                <option value="vredenburg">Vredenburg</option>
+                {{!-- <option value="allTowns">All towns</option> --}}
+                <option value="1">Cape Town (CA)</option>
+                <option value="2">Paarl (CJ)</option>
+                <option value="3">Malmesbury (CK)</option>
+                <option value="4">Stellenbosch(CL)</option>
+                <option value="5">Kraaifontein(CF)</option>
 
             </select>
+            <button type="submit" style="none">Submit</button>
         </div>
-    </div>
 </form>
 <div class="font">
+
+
     {{#each regNum}}
     <p class="regNum">{{this.number}}</p>
     {{/each}}
+</div>
 </div>

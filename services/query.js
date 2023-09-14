@@ -9,10 +9,12 @@ export default function regNumQuery(db) {
         if (!existingRecord) {
             // If no existing record found, insert the registration number
             await db.none('INSERT INTO registration_numbers (number, town_id) VALUES ($1, $2)', [regNo, townCode[0].id]);
-            console.log('Registration number inserted successfully.');
-        } else {
-            console.log('Registration number already exists in the table.');
+            // console.log('Registration number inserted successfully.');
+        } 
+        else{
+            return "Registration number already exists"; 
         }
+
     }
     
 
@@ -35,12 +37,7 @@ export default function regNumQuery(db) {
         return result
     }
 
-//this function will go to reg table and only take reg numbers that match with id that is connected to the value in dropdown
-    // async function filter(townId){
 
-    //    return await db.manyOrNone('SELECT number FROM registration_numbers WHERE town_id = $1',[townId])
-
-    // }
 
     async function filter(townId) {
         const registrationNumbers = await db.manyOrNone('SELECT number FROM registration_numbers WHERE town_id = $1', [townId]);

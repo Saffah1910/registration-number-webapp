@@ -3,10 +3,35 @@
 <p class="info">Enter a registration from Cape Town(CA), Paarl(CJ), Stellenbosch(CL), Malmesbury(CK), Kraaifontein(CF)
 </p>
 
+
+{{#if errorMessage}}
+<p class="red">{{errorMessage}}</p>
+
+{{/if}}
+
+
+<script>
+    setTimeout(function () {
+        document.querySelector(".red").style.display = "none";
+    }, 4000)
+</script>
+
+
+
+{{#if reset}}<p class="green">{{reset}}</p>{{/if}}
+
+<script>
+    setTimeout(function () {
+        document.querySelector(".green").style.display = "none";
+    }, 4000)
+</script>
+
+
+
+
+
 <div class="container">
     <form action="/registrations" method="POST">
-
-        <p>{{errorMessage}}</p>
 
 
 
@@ -16,13 +41,8 @@
         <p class="invalidMsg"></p>
         <div class="buttons">
             <button class="addRegNoBtn" type="submit">ADD</button>
-            {{!--
-            <script>
-                setTimeout(function () {
-                    document.querySelector(".green").style.display = "none";
-                }, 3000)
-            </script> --}}
-            {{#if reset}}<p class="green">{{reset}}</p>{{/if}}
+
+
 
             <button type="submit" formaction="/clear"
                 onclick="return confirm('Are you sure you want to reset your data?')">CLEAR</button>
@@ -35,6 +55,7 @@
 
 
 <br>
+
 <form action="/filter" method="POST">
     <div class="boxRegNo">
 
@@ -60,5 +81,17 @@
     {{#each regNum}}
     <p class="regNum">{{this.number}}</p>
     {{/each}}
+
 </div>
-</div>
+<br>
+{{#if filterError}}
+  <div class="filterError">
+    {{filterError}}
+  </div>
+{{/if}}
+
+<script>
+    setTimeout(function () {
+        document.querySelector(".filterError").style.display = "none";
+    }, 4000)
+</script>

@@ -69,15 +69,17 @@ input {
 
 
 .red {
-  border: 1px solid;
+  border: 3px solid;
   margin: 0 auto;
   padding: 15px 10px 15px 50px;
   background-repeat: no-repeat;
   background-position: 10px center;
-  background-color: #ff9b85;
+  background-color: #f5eeed;
   background-image: url('../css/error.jpg');
   width: fit-content;
   color: #c1121f;
+  border-radius: 5%;
+
 }
 
 button {
@@ -226,7 +228,7 @@ body {
   font-size: 25px;
   height: 150px;
   text-align: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   background-color: #f2f2f2;
   border-radius: 10px;
   padding: 10px;
@@ -253,9 +255,22 @@ body {
 
 
 }
+.filterError{
+font-size: 50px;
+  text-align: center;
+  background-image: url(./noreg.jpg);
+  background-size: cover; /* Adjust to cover the entire element */
+  background-repeat: no-repeat;
+  background-position: center; /* Center the background image */
+  height: 300px;
+  width: 300px;
+  background-color: #f0f0f0; 
+  margin: auto;
+}
+
 
 /* Styles for smaller screens (e.g., mobile devices) */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   :root {
     font-size: 16px; /* Decrease font size for smaller screens */
   }
@@ -270,8 +285,7 @@ body {
 
   .container {
     font-size: 20px; /* Adjust font size for smaller screens */
-    margin-top: 50px; /* Decrease margin-top for smaller screens */
+    margin-top: 50px;
   }
 }
 
-/* Add more media queries and adjust styles as needed for other screen sizes */

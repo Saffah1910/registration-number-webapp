@@ -22,7 +22,7 @@ export default function AddRegNums(dbLogic, frontEndLogic) {
   async function filterTowns(req, res) {
     let townId = req.body.town;
     let regNum = await dbLogic.filter(townId);
-    let filterError = await frontEndLogic.filterError();
+    let filterError = await frontEndLogic.filterError(townId);
 
 
     res.render("index", {
@@ -34,7 +34,8 @@ export default function AddRegNums(dbLogic, frontEndLogic) {
   }
 
   async function clearAll(req, res) {
-    req.flash('reset', 'Registartion Numbers have cleared');
+    req.flash('reset',  "All registration numbers have been successfully cleared."
+    );
     await dbLogic.deleteFromTable();
 
     res.redirect('/');

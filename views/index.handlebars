@@ -56,25 +56,43 @@
 
 <br>
 
-<form action="/filter" method="POST">
+<form id="townFilterForm" action="/filter" method="POST">
     <div class="boxRegNo">
-
         <div>
-            <label for="regNums"></label>
-            {{!-- <p>{{}}</p> --}}
-            <select name="town" class="town">
+            <label for="regNums">Choose a town:</label>
+            <select name="town" class="town" onchange="redirectToSelectedTown(this);">
                 <option value="" disabled selected>Select your option </option>
-                {{!-- <option value="allTowns">All towns</option> --}}
+                <option value="/">All towns</option>
                 <option value="1">Cape Town (CA)</option>
                 <option value="2">Paarl (CJ)</option>
                 <option value="3">Malmesbury (CK)</option>
                 <option value="4">Stellenbosch(CL)</option>
                 <option value="5">Kraaifontein(CF)</option>
-
             </select>
-            <button type="submit" style="none">Submit</button>
+
         </div>
+    </div>
 </form>
+
+<script>
+    function redirectToSelectedTown(selectElement) {
+        const selectedValue = selectElement.value;
+
+        // Check if the selected value is not empty
+        if (selectedValue) {
+            // Submit the form when a town is selected
+            document.getElementById('townFilterForm').submit();
+        }
+        if (selectedValue === "/") {
+
+            window.location.href = selectedValue;
+        }
+    }
+</script>
+
+
+
+
 <div class="font">
 
 
@@ -85,9 +103,9 @@
 </div>
 <br>
 {{#if filterError}}
-  <div class="filterError">
+<div class="filterError">
     {{filterError}}
-  </div>
+</div>
 {{/if}}
 
 <script>

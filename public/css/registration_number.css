@@ -14,7 +14,7 @@
 }
 
 body {
- /* background-image filter: brightness(40%); */
+  /* background-image filter: brightness(40%); */
   /* background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url(../css/bgCar.jpg); */
   /* background-size: cover; */
   position: relative;
@@ -29,7 +29,8 @@ body h1 {
   text-shadow: 3px 3px 3px grey;
   text-align: center;
 }
-.info{
+
+.info {
   text-align: center;
   color: rgb(98, 97, 97);
 }
@@ -53,7 +54,8 @@ body h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
-.buttons{
+
+.buttons {
   display: flex;
   /* margin-inline: auto; */
   min-width: 100%;
@@ -133,90 +135,74 @@ button:active {
   text-align: center;
   font-size: 2em;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 3fr; /* Define 4 columns with different sizes */
-  gap: 10px; /* Set a larger gap of 10 pixels */
-  
+  grid-template-columns: 1fr 2fr 1fr 3fr;
+
+  gap: 10px;
+
 
 }
-.regNum{
+
+.regNum {
   border: black;
-/* background-color: #f2f2f2; */
-/* width: 200px; */
+  /* background-color: #f2f2f2; */
+  /* width: 200px; */
 
 }
 
 .text-align {
   text-align: center;
 }
-.boxRegNo{
+
+.boxRegNo {
   text-align: center;
 }
 
-/* Style for the select element */
+
 select {
-  appearance: none;
   outline: none;
   background: rgba(128, 15, 0, 0.61);
   text-align: center;
   color: black;
-  /* cursor: pointer; */
   border: 1px solid black;
   border-radius: 3px;
   padding: 10px;
   font-size: 16px;
-  /* Increase font size for better readability */
 }
 
 .select {
   position: relative;
   display: inline-block;
-  /* Change to inline-block to fit content */
   width: 15em;
   height: 2em;
   line-height: 2;
-  /* Adjust line-height for better alignment */
-  /* overflow: hidden; */
   border-radius: 3px;
   background-color: white;
-  /* Set a background color for the container */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  /* Add a subtle shadow */
 }
 
-/* Style for the select arrow (dropdown arrow) */
 .select::after {
   content: '\25BC';
-  /* Unicode character for a down arrow */
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
   font-size: 14px;
-  /* Adjust the arrow size */
-  /* pointer-events: none; */
-  /* Allow clicks to pass through to the select element */
+
 }
 
-/* Hover and focus styles for better user feedback */
 select:hover,
 select:focus {
   border-color: #007bff;
-  /* Change border color on hover/focus */
   background-color: rgba(128, 15, 0, 0.8);
-  /* Darker background on hover/focus */
   color: white;
-  /* Change text color on hover/focus */
 }
-/* Define the base font size */
+
 :root {
   font-size: 20px;
 }
 
-/* Common styles for larger screens */
 body {
-  background-image: url(../css/bgCar.jpg); 
-  /* background-image: linear-gradient(to right, rgba(4, 175, 243, 0), rgb(178, 87, 69)); */
-
+  background-image: url(../css/bgCar.jpg);
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -228,7 +214,6 @@ body {
   font-size: 25px;
   height: 150px;
   text-align: center;
-  /* margin-top: 100px; */
   background-color: #f2f2f2;
   border-radius: 10px;
   padding: 10px;
@@ -246,7 +231,7 @@ body {
   background-repeat: no-repeat;
   background-position: 10px center;
   color: #4F8A10;
-  background-color: #DFF2BF;
+  background-color: #ebf8d5;
   background-image: url('../css/resetGreen.png');
   width: fit-content;
   border: 2px solid #124105c2;
@@ -255,16 +240,20 @@ body {
 
 
 }
-.filterError{
-font-size: 50px;
+
+.filterError {
+  font-family: carPlate;
+  font-size: 50px;
   text-align: center;
   background-image: url(./noreg.jpg);
-  background-size: cover; /* Adjust to cover the entire element */
+  background-size: cover;
+  /* Adjust to cover the entire element */
   background-repeat: no-repeat;
-  background-position: center; /* Center the background image */
+  background-position: center;
+  /* Center the background image */
   height: 300px;
-  width: 300px;
-  background-color: #f0f0f0; 
+  width: 500px;
+  background-color: #f0f0f0;
   margin: auto;
 }
 
@@ -272,20 +261,22 @@ font-size: 50px;
 /* Styles for smaller screens (e.g., mobile devices) */
 @media (max-width: 1100px) {
   :root {
-    font-size: 16px; /* Decrease font size for smaller screens */
+    font-size: 16px;
+    /* Decrease font size for smaller screens */
   }
 
   body {
     background-size: auto;
-  } 
+  }
 
   body h1 {
-    font-size: 24px; /* Increase font size for smaller screens */
+    font-size: 24px;
+    /* Increase font size for smaller screens */
   }
 
   .container {
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 20px;
+    /* Adjust font size for smaller screens */
     margin-top: 50px;
   }
 }
-

@@ -14,8 +14,8 @@ import AddRegNums from './routes/regNumRoutes.js';
 
 
 //use pgppromise to cnnect to the databse
-const pgp = pgPromise({})
 const connectionString = process.env.DATABASE_URL;
+const pgp = pgPromise({})
 const db = pgp(connectionString);
 
 //this creates an instance of your express app

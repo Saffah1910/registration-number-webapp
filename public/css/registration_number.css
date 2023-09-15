@@ -242,20 +242,40 @@ body {
 }
 
 .filterError {
-  font-family: carPlate;
-  font-size: 50px;
+ 
+  font-family: Arial, sans-serif;
+  font-size: 30px; 
   text-align: center;
   background-image: url(./noreg.jpg);
   background-size: cover;
-  /* Adjust to cover the entire element */
   background-repeat: no-repeat;
   background-position: center;
-  /* Center the background image */
   height: 300px;
   width: 500px;
   background-color: #f0f0f0;
-  margin: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #333;
 }
+
+/* If you want to style links inside the message */
+.filterError a {
+  color: #007bff; /* Change link color to blue, adjust as needed */
+  text-decoration: underline; /* Add underline to links */
+}
+
+/* If you want to style headings inside the message */
+.filterError h1 {
+  font-size: 28px; /* Adjust heading font size */
+  margin-bottom: 10px; /* Add spacing below headings */
+}
+
+
 
 
 /* Styles for smaller screens (e.g., mobile devices) */

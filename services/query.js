@@ -13,7 +13,10 @@ export default function regNumQuery(db) {
         } 
       
     }
- 
+ async function aleadyExist(regNo){
+    const existingRecord = await db.oneOrNone('SELECT number FROM registration_numbers WHERE number = $1', [regNo]);
+    return existingRecord
+}
 
     async function getRegNum() {
        let result = await db.any('SELECT * FROM registration_numbers');
@@ -55,6 +58,7 @@ export default function regNumQuery(db) {
         getRegNum,
         filter,
         deleteFromTable,
-        giveId
+        giveId,
+        aleadyExist
        }
 }

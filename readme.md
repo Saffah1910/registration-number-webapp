@@ -18,4 +18,3 @@ The **Registration Numbers Web App** is a simple web application built using Nod
 - **PostgreSQL**: A powerful open-source relational database.
 - **Other Dependencies**: Body-parser, dotenv, express-flash, express-handlebars, express-session, pg-promise, etc.
 
-DATABASE_URL=postgres://hadwsxzm:f4B3hnOH4VDC7QMkyKLtdSwvKCgJSYN8@trumpet.db.elephantsql.com/hadwsxzm?ssl=true

@@ -10,20 +10,16 @@ export default function regNumQuery(db) {
             // If no existing record found, insert the registration number
             await db.none('INSERT INTO registration_numbers (number, town_id) VALUES ($1, $2)', [regNo, townCode[0].id]);
             // console.log('Registration number inserted successfully.');
-            return !!existingRecord;
         } 
       
     }
  
-      
-    
 
     async function getRegNum() {
        let result = await db.any('SELECT * FROM registration_numbers');
         return result
         //check if it is an object that is being retured
 
-        
     }
 
 

@@ -1,4 +1,5 @@
 export default function RegistrationNumbers(dbLogic) {
+  let errorMessage = "";
 
 
 
@@ -9,40 +10,30 @@ export default function RegistrationNumbers(dbLogic) {
     }
 
 
-    // async function setErrors(regNum) {
-    //     let errorMessage = "";
-    //     const exists = await dbLogic.insertRegNum(regNum);
-    //     if (regNum == "") {
-    //         errorMessage = "Enter the vehicle's registration number.";
-    //     }
-    //     else if (!checkRegNum(regNum)) {
-    //         errorMessage = "Please provide a valid registration number.";
-    //     }
-    //     else if (!exists) {
-    //         errorMessage = "This registration number has already been added.";
-    //         console.log(errorMessage);
-
-    //     }
-
-    //     return errorMessage
-
-    // }
-
-    async function setErrors(regNum) {
-        let errorMessage = "";
-        const exists = await dbLogic.insertRegNum(regNum);
-      
+     function setErrors(regNum) {
+     
         if (regNum == "") {
-          errorMessage = "Enter the vehicle's registration number.";
-        } else if (!checkRegNum(regNum)) {
-          errorMessage = "Please provide a valid registration number.";
-        } else if (!exists) {
-          errorMessage = "This registration number has already been added.";
-          console.log(errorMessage);
+            errorMessage = "Enter the vehicle's registration number.";
         }
-      
-        return errorMessage;
-      }
+        else if (!checkRegNum(regNum)) {
+            errorMessage = "Please provide a valid registration number.";
+        }
+        
+        return errorMessage
+        
+   
+    }
+    async function existingError(regNo){
+     const exists = await dbLogic.insertRegNum(regNo)
+      if (!exists) {
+        errorMessage = "This registration number has already been added.";
+        
+
+    }
+    return errorMessage
+    }
+
+ 
       
     async function filterError(townId) {
         let message = "";
@@ -59,7 +50,8 @@ export default function RegistrationNumbers(dbLogic) {
     return {
         checkRegNum,
         setErrors,
-        filterError
+        filterError,
+        existingError
 
     }
 

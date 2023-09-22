@@ -1,6 +1,6 @@
 export default function regNumQuery(db) {
 
-    async function insertRegNum(regNo) {
+    async function insertRegNum(regNo, validNo) {
         let townCode = await giveId(regNo);
     
         // Check if the registration number already exists in the table
